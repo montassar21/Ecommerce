@@ -1,0 +1,83 @@
+:root {
+    --col:#d0b2a9 ;
+    --coll:#733C3C;
+    --coll2:white;
+    --col3:#FFFBE9;
+
+    --ff:cursive;
+}
+.aboutEshop{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 30px;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.aboutEshop div h1{
+    font-size: 55px;
+}
+.aboutEshop div p,.team div p {
+
+    font-weight: 700;
+}
+.aboutEshop div h1 strong{
+color: var(--coll);
+
+}
+.aboutEshop img{
+    width:500px;
+    height: 500px;
+    border-radius: 7px;
+    box-shadow: 5px 5px 4px;
+}
+.team{
+    align-items: center;
+    margin:50px 0;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin: 15px;
+}
+.members{
+   display: inline-flex;
+    flex-direction: row;
+    transition: 0.7s;
+
+}
+.memb{
+    height: 72vh;
+    width:60vh;
+    border-radius: 7px;
+    box-shadow: 4px 4px 8px;
+    margin: 20px;
+    background-size:cover;
+    background-position: 0px 120px ;
+    background-repeat: no-repeat;
+    transition: 0.7s;
+}
+#membr{
+    position: relative;
+    left:-480px;
+}
+.team div h1 strong{
+    color: var(--coll);
+}
+
+.icons i{
+    font-size:40px;
+    border-radius: 50px;
+    margin:10px;
+    padding: 20px;
+    background-color: var(--col);
+    color: var(--col3);
+    cursor: pointer;
+}
+.memb div{
+    margin: 20px;
+}
