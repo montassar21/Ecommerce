@@ -1,10 +1,20 @@
 <?php include "header.php";?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product</title>
+</head>
+<body>
 <?php include 'connectsql.php';
 if(isset($_GET['id'])){
-  include 'connectsql.php';
-  $sql="SELECT * FROM products WHERE id={$_GET['id']}";
+  $sql="SELECT * FROM products WHERE id='".$_GET['id']."'";
   $res=mysqli_query($conn,$sql);
-$prod=mysqli_fetch_assoc($res);}
+$prod=mysqli_fetch_assoc($res);
+}
 ?>
 <div class="bg-white">
   <div class="pt-6">
@@ -77,7 +87,7 @@ $prod=mysqli_fetch_assoc($res);}
           </div>
         </div>
 
-        <form class="mt-10">
+        <form class="mt-10" method="post" action="product.php">
           <div>
             <h3 class="text-sm text-gray-900 font-medium">Color</h3>
 
@@ -85,23 +95,22 @@ $prod=mysqli_fetch_assoc($res);}
               <legend class="sr-only">Choose a color</legend>
               <div class="flex items-center space-x-3">
              
-                <label class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400">
-                  <input type="radio" name="color-choice" value="White" class="sr-only" aria-labelledby="color-choice-0-label">
+                <label class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline:none ring-gray-700">
+                  <input type="radio" name="color-choice" value="White"  aria-labelledby="color-choice-0-label">
                   <span id="color-choice-0-label" class="sr-only"> White </span>
-                  <span aria-hidden="true" class="h-8 w-8 bg-white border border-black border-opacity-10 rounded-full"></span>
+                  <span class="h-8 w-8 bg-white border border-black border-opacity-10 rounded-full "></span>
                 </label>
 
-                <label class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400">
-                  <input type="radio" name="color-choice" value="Gray" class="sr-only" aria-labelledby="color-choice-1-label">
+                <label class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:border-black ring-gray-700">
+                  <input type="radio" name="color-choice" value="Gray"  aria-labelledby="color-choice-1-label">
                   <span id="color-choice-1-label" class="sr-only"> Gray </span>
-                  <span aria-hidden="true" class="h-8 w-8 bg-gray-200 border border-black border-opacity-10 rounded-full"></span>
+                  <span class="h-8 w-8 bg-gray-200 border border-black border-opacity-10 rounded-full"></span>
                 </label>
-
               
-                <label class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-900">
-                  <input type="radio" name="color-choice" value="Black" class="sr-only" aria-labelledby="color-choice-2-label">
+                <label class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:border-black ring-gray-900">
+                  <input type="radio" name="color-choice" value="Black"  aria-labelledby="color-choice-2-label">
                   <span id="color-choice-2-label" class="sr-only"> Black </span>
-                  <span aria-hidden="true" class="h-8 w-8 bg-gray-900 border border-black border-opacity-10 rounded-full"></span>
+                  <span  class="h-8 w-8 bg-gray-900 border border-black border-opacity-10 rounded-full"></span>
                 </label>
               </div>
             </fieldset>
@@ -112,11 +121,11 @@ $prod=mysqli_fetch_assoc($res);}
               <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Size guide</a>
             </div>
 
-            <fieldset class="mt-4">
+            <fieldset class="mt-3">
               <legend class="sr-only">Choose a size</legend>
-              <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
-                <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-gray-50 text-gray-200 cursor-not-allowed">
-                  <input type="radio" name="size-choice" value="XXS" disabled class="sr-only" aria-labelledby="size-choice-0-label">
+              <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-3">
+                <label class="group relative border rounded-md py-4 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-gray-50 text-gray-200 cursor-not-allowed">
+                  <input type="radio" name="size-choice" value="XXS" aria-labelledby="size-choice-0-label">
                   <span id="size-choice-0-label"> XXS </span>
 
                   <span aria-hidden="true" class="absolute -inset-px rounded-md border-2 border-gray-200 pointer-events-none">
@@ -127,40 +136,40 @@ $prod=mysqli_fetch_assoc($res);}
                 </label>
 
                 <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                  <input type="radio" name="size-choice" value="XS" class="sr-only" aria-labelledby="size-choice-1-label">
+                  <input type="radio" name="size-choice" value="XS" aria-labelledby="size-choice-1-label">
                   <span id="size-choice-1-label"> XS </span>
                   <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
                 </label>
 
                 <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                  <input type="radio" name="size-choice" value="S" class="sr-only" aria-labelledby="size-choice-2-label">
+                  <input type="radio" name="size-choice" value="S" aria-labelledby="size-choice-2-label">
                   <span id="size-choice-2-label"> S </span>
                   <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
                 </label>
                 <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                  <input type="radio" name="size-choice" value="M" class="sr-only" aria-labelledby="size-choice-3-label">
+                  <input type="radio" name="size-choice" value="M"  aria-labelledby="size-choice-3-label">
                   <span id="size-choice-3-label"> M </span>
                   <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
                 </label>
                 <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                  <input type="radio" name="size-choice" value="L" class="sr-only" aria-labelledby="size-choice-4-label">
+                  <input type="radio" name="size-choice" value="L"  aria-labelledby="size-choice-4-label">
                   <span id="size-choice-4-label"> L </span>
                   <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
                 </label>
                 <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                  <input type="radio" name="size-choice" value="XL" class="sr-only" aria-labelledby="size-choice-5-label">
+                  <input type="radio" name="size-choice" value="XL"  aria-labelledby="size-choice-5-label">
                   <span id="size-choice-5-label"> XL </span>
                   <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
                 </label>
 
                 <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                  <input type="radio" name="size-choice" value="2XL" class="sr-only" aria-labelledby="size-choice-6-label">
+                  <input type="radio" name="size-choice" value="2XL"  aria-labelledby="size-choice-6-label">
                   <span id="size-choice-6-label"> 2XL </span>
                   <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
                 </label>
 
                 <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                  <input type="radio" name="size-choice" value="3XL" class="sr-only" aria-labelledby="size-choice-7-label">
+                  <input type="radio" name="size-choice" value="3XL" aria-labelledby="size-choice-7-label">
                   <span id="size-choice-7-label"> 3XL </span>
 
                 
@@ -169,9 +178,10 @@ $prod=mysqli_fetch_assoc($res);}
               </div>
             </fieldset>
           </div>
+          <a type="submit" name="add" href="panier.php?id=<?php echo $prod['id']?>" class="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to bag</a>
 
-          <button type="submit" class="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to bag</button>
         </form>
+
       </div>
 
       <div class="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
@@ -203,4 +213,9 @@ $prod=mysqli_fetch_assoc($res);}
     </div>
   </div>
 </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.tailwindcss.com/"></script>
+
+</html>
 <?php include "footer.php";?>

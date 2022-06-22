@@ -19,14 +19,14 @@
 <body>
     <nav class="nc navbar navbar-expand-lg" id="navv">
         <div class="container-fluid">
-          <a class="nac navbar-brand fs-5" href="index.php">E-Shop</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <a class="nac navbar-brand fs-5" href="index.php" id="Eshop">E-Shop</a>
+          <button class="navbar-toggler mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="na collapse navbar-collapse ms-3" id="navbarNavDropdown">
-            <ul class="navbar-nav ">
+            <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active text-bg-light" aria-current="page" href="index.php">Home</a>
+                <a class="nav-link active text-bg-light w-18" aria-current="page" href="index.php">Home</a>
               </li>
               
               <li class="nav-item">

@@ -28,7 +28,7 @@
     </div>
 </div>
     <div>
-    <img src="images/clark-street-mercantile-P3pI6xzovu0-unsplash.jpg">
+    <img src="images/clark-street-mercantile-P3pI6xzovu0-unsplash-min.jpg">
 </div>
 </div>
 <div id="mission" class="py-14 bg-white">
@@ -108,61 +108,61 @@
 </div>
 </div>
 <div id="membr" class="members">
-    <div class="memb" style="background-image:url('images/jeremy-mcgilvrey-Mum-4dB0VsE-unsplash.jpg');">
+    <div class="memb" style="background-image:url('images/jeremy-mcgilvrey-Mum-4dB0VsE-unsplash-min.jpg');">
         <div>
         <h2>Montassar Brahem</h2>
         <h4>Ceo & co-founder</h4>
 </div>
     </div>
-    <div class="memb"  style="background-image:url('images/itay-verchik-YmQ8TrsieE4-unsplash.jpg');">
+    <div class="memb"  style="background-image:url('images/itay-verchik-YmQ8TrsieE4-unsplash-min.jpg');">
         <div>
         <h2>Montassar Brahem</h2>
         <h4>Ceo & co-founder</h4>
 </div>
     </div>
-    <div class="memb"  style="background-image:url('images/sahil-moosa-s27B05TjXxw-unsplash.jpg');">
+    <div class="memb"  style="background-image:url('images/sahil-moosa-s27B05TjXxw-unsplash-min.jpg');">
         <div>
         <h2>Montassar Brahem</h2>
         <h4>Ceo & co-founder</h4>
 </div>
     </div>
-    <div class="memb"  style="background-image:url('images/andrew-power-y9L5-wmifaY-unsplash.jpg');">
+    <div class="memb"  style="background-image:url('images/andrew-power-y9L5-wmifaY-unsplash-min.jpg');">
         <div>
         <h2>Montassar Brahem</h2>
         <h4>Ceo & co-founder</h4>
 </div>
     </div>
-    <div class="memb" style="background-image:url('images/ben-parker-OhKElOkQ3RE-unsplash.jpg');">
+    <div class="memb" style="background-image:url('images/ben-parker-OhKElOkQ3RE-unsplash-min.jpg');">
         <div>
         <h2>Montassar Brahem</h2>
         <h4>Ceo & co-founder</h4>
 </div>
     </div>
-    <div class="memb" style="background-image:url('images/jeremy-mcgilvrey-Mum-4dB0VsE-unsplash.jpg');">
+    <div class="memb" style="background-image:url('images/jeremy-mcgilvrey-Mum-4dB0VsE-unsplash-min.jpg');">
         <div>
         <h2>Montassar Brahem</h2>
         <h4>Ceo & co-founder</h4>
 </div>
     </div>
-    <div class="memb"  style="background-image:url('images/itay-verchik-YmQ8TrsieE4-unsplash.jpg');">
+    <div class="memb"  style="background-image:url('images/itay-verchik-YmQ8TrsieE4-unsplash-min.jpg');">
         <div>
         <h2>Montassar Brahem</h2>
         <h4>Ceo & co-founder</h4>
 </div>
     </div>
-    <div class="memb"  style="background-image:url('images/sahil-moosa-s27B05TjXxw-unsplash.jpg');">
+    <div class="memb"  style="background-image:url('images/sahil-moosa-s27B05TjXxw-unsplash-min.jpg');">
         <div>
         <h2>Montassar Brahem</h2>
         <h4>Ceo & co-founder</h4>
 </div>
     </div>
-    <div class="memb"  style="background-image:url('images/andrew-power-y9L5-wmifaY-unsplash.jpg');">
+    <div class="memb"  style="background-image:url('images/andrew-power-y9L5-wmifaY-unsplash-min.jpg');">
         <div>
         <h2>Montassar Brahem</h2>
         <h4>Ceo & co-founder</h4>
 </div>
     </div>
-    <div class="memb"  style="background-image:url('images/ben-parker-OhKElOkQ3RE-unsplash.jpg');">
+    <div class="memb"  style="background-image:url('images/ben-parker-OhKElOkQ3RE-unsplash-min.jpg');">
         <div>
         <h2>Montassar Brahem</h2>
         <h4>Ceo & co-founder</h4>
