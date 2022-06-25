@@ -9,8 +9,9 @@
   <title>Product</title>
 </head>
 <body>
-<?php include 'connectsql.php';
+<?php 
 if(isset($_GET['id'])){
+  $conn=connectS();
   $sql="SELECT * FROM products WHERE id='".$_GET['id']."'";
   $res=mysqli_query($conn,$sql);
 $prod=mysqli_fetch_assoc($res);
@@ -87,7 +88,7 @@ $prod=mysqli_fetch_assoc($res);
           </div>
         </div>
 
-        <form class="mt-10" method="post" action="product.php">
+        <form class="mt-10" method="get" action="panier.php">
           <div>
             <h3 class="text-sm text-gray-900 font-medium">Color</h3>
 
@@ -171,14 +172,18 @@ $prod=mysqli_fetch_assoc($res);
                 <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
                   <input type="radio" name="size-choice" value="3XL" aria-labelledby="size-choice-7-label">
                   <span id="size-choice-7-label"> 3XL </span>
-
-                
                   <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
                 </label>
               </div>
             </fieldset>
+                <label class=" relative  flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-4 mt-1 text-gray-900 cursor-pointer">
+                  <span class="absolute -inset-px  pointer-events-none" aria-hidden="true">Quantity </span>
+                </label>
+                <input type="number" name="qte" value="3XL" class="p-1 border">
+
           </div>
-          <a type="submit" name="add" href="panier.php?id=<?php echo $prod['id']?>" class="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to bag</a>
+          <input type="hidden" name="id" value="<?php echo $prod['id']?>">
+          <button type="submit" name="add" class="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to bag</button>
 
         </form>
 

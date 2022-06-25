@@ -39,6 +39,7 @@
                 <a class="nav-link" href="contact.php">Contact</a>
               </li>
               <?php
+include 'functions.php';
 session_start();
 if(!isset($_SESSION['firstname'])){
   echo ' <li class="nav-item dropdown">
@@ -63,7 +64,7 @@ else{
 }?>
              
               <li class="nav-item">
-                <a class="nav-link" href="panier.php"><i class="fa-solid fa-cart-plus"></i> </a>
+                <a class="nav-link" href="panier.php"><i class="fa-solid fa-cart-plus"></i> (<span id="upd"><?php updatePanier();?></span>)</a>
               </li>
             </ul>
           </div>

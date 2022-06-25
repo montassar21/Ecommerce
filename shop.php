@@ -5,11 +5,9 @@
 <h1>Featured Products</h1>
 <p>Summer collection New morden designs</p>
 <div class="row col-12 prod">
-<?php include 'connectsql.php';
-$sql='SELECT * FROM products';
-$res=mysqli_query($conn,$sql);
-  
-  while($row = mysqli_fetch_assoc($res))
+<?php
+$products=getAllProducts();
+  while($row=mysqli_fetch_assoc($products))
     {
     print '<div id="ca" class="card col-3" style="width: 18rem;">
     <img src="'.$row['img'].'" class="card-img-top" alt="...">

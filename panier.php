@@ -1,17 +1,16 @@
 <?php include "header.php";?>
 <?php
-include 'connectsql.php';
-if(isset($_GET['id'])){
-  if(isset($_SESSION['email'])){
-  $sql="SELECT * FROM products WHERE id='".$_GET['id']."'";
-  $res=mysqli_query($conn,$sql);
-$prod=mysqli_fetch_assoc($res);
-$req1="INSERT INTO panier(namee,prix,descc,qte,taille,usermail,img) VALUES('".$prod['name']."','".$prod['prix']."','".$prod['description']."','2','L','".$_SESSION['email']."','".$prod['img']."')";
-$sql1=mysqli_query($conn,$req1);}
+if(isset($_GET['add'])){
+if(isset($_SESSION['email'])){
+addProdToPan($_GET['id'],$_GET['qte'],$_GET['size-choice']);
+updatePanier();}
+else{
+  header('location:signin.php');
+}
 }
 if(isset($_GET['idd'])){
-  $sql2="DELETE FROM panier WHERE idd='".$_GET['idd']."'";
-  $res2=mysqli_query($conn,$sql2); 
+  deleteFromPanier($_GET['idd']);
+  updatePanier();
 }
 ?>
 <!DOCTYPE html>
@@ -47,6 +46,7 @@ if(isset($_GET['idd'])){
                   <ul role="list" class="-my-6 divide-y divide-gray-200">
                     <?php
                     if(isset($_SESSION['firstname'])){
+                      $conn=connectS();
                      $req2="SELECT * FROM panier WHERE usermail='".$_SESSION['email']."'";
                      $sql2=mysqli_query($conn,$req2);
                      $sum=0;
@@ -65,24 +65,21 @@ if(isset($_GET['idd'])){
                              </h3>
                              <p class="ml-4">'.$row['prix'].'</p>
                            </div>
-                           <p class="mt-1 text-sm text-gray-500">'.$row['prix'].'</p>
+                           <p class="mt-1 text-sm text-gray-500">'.$row['qte'].'</p>
                          </div>
                          <div class="flex flex-1 items-end justify-between text-sm">
-                           <p class="text-gray-500">Qty 1</p>
+                           <p class="text-gray-500">'.$row['taille'].'</p>
    
                            <div class="flex">
-                           <form action="panier.php" method="delete">
+                           <form action="panier.php">
                              <a href="panier.php?idd='.$row['idd'].'" type="submit" name="remove" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</a>
                            </form>
                              </div>
                          </div>
                        </div>
                      </li>';
-                     $sum+=$row['prix'];
-                     if(isset($_POST['remove'])){
-                      $sql1="DELETE FROM panier WHERE  id='5' AND usermail='".$row['usermail']."'";
-                      $res1=mysqli_query($conn,$sql1);
-                      }
+                     $sum+=$row['qte']*$row['prix'];
+            
                      }}
                      else{
                       echo "Sign in with your account and checkh your store .";
